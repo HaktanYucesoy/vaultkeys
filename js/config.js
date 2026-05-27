@@ -3,6 +3,9 @@ const ADPAIR_CONFIG = {
   // AdPair staging API base
   apiBase: 'https://adpair-staging-app-eyrvb.ondigitalocean.app/api',
 
+  // Browser storefronts usually finalize attribution from the thank-you page pixel.
+  defaultTrackingMethod: 'pixel',
+
   // Pixel base (strips /api from end)
   get pixelBase() {
     return this.apiBase.replace(/\/api\/?$/, '') + '/pixel';

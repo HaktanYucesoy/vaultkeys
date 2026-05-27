@@ -94,7 +94,7 @@
 <script>
   const urlParams = new URLSearchParams(window.location.search);
   const orderId = urlParams.get('order_id');
-  const method = urlParams.get('method') || 's2s_post';
+  const method = urlParams.get('method') || ADPAIR_CONFIG.defaultTrackingMethod || 'pixel';
   const orderData = JSON.parse(localStorage.getItem('vk_last_order') || '{}');
   const clickId = VKTracking.getClickId();
   const utm = VKTracking.getUtm();

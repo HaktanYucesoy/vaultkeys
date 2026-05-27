@@ -119,7 +119,7 @@
         </div>
 
         <!-- Hidden tracking method -->
-        <input type="hidden" name="tracking-method" id="tracking-method-input" value="s2s_post"/>
+        <input type="hidden" name="tracking-method" id="tracking-method-input" value="pixel"/>
 
         <button type="submit" id="place-order-btn" class="w-full py-4 bg-brand text-black font-extrabold rounded-2xl hover:bg-brand-dark text-base btn-glow">
           Complete Purchase →
@@ -204,8 +204,9 @@
     const isReturning = document.getElementById('returning-customer').checked;
     const urlOverride = new URLSearchParams(window.location.search).get('tracking');
     const lsOverride = localStorage.getItem('vk_test_tracking');
-    const trackingMethod = urlOverride || lsOverride || 's2s_post';
+    const trackingMethod = urlOverride || lsOverride || ADPAIR_CONFIG.defaultTrackingMethod || 'pixel';
     localStorage.removeItem('vk_test_tracking');
+    document.getElementById('tracking-method-input').value = trackingMethod;
     const orderId = VKTracking.generateOrderId();
 
     const cartItems = VKCart.getCart();

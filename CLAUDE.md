@@ -173,6 +173,9 @@ Append these params to trigger tracking simulation:
 # DealHub affiliate
 /?click_id=TEST123&utm_source=dealshub&utm_medium=cpc&utm_campaign=summer_sale
 
+# Default storefront conversion method
+# confirmation.html fires the browser pixel unless overridden
+
 # Force specific tracking method at checkout
 /checkout.html?tracking=pixel
 /checkout.html?tracking=s2s_get

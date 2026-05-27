@@ -150,11 +150,19 @@ index.html?click_id=clk_youtube_001&ref=YT005&utm_source=youtube&utm_medium=vide
 **Adımlar:**
 1. Tarayıcıya yapıştır: `index.html?click_id=clk_google_001&ref=BLOG002&utm_source=google&utm_medium=organic&utm_campaign=review_post`
 2. `product.html?slug=cyberpunk-2077` → Add to Cart
-3. Checkout → Complete Purchase (S2S POST otomatik gönderilir)
+3. Checkout URL'ini `?tracking=s2s_get` ile aç: `checkout.html?tracking=s2s_get`
+4. Complete Purchase
 
 **Doğrulama:**
 - AdPair → Conversions → `source = google`, `utm_medium = organic`
-- DevTools → Network → `POST /api/conversions/postback` isteği görülmeli
+- DevTools → Network → `GET /api/conversions/postback?...` isteği görülmeli
+
+---
+
+### Varsayılan Yöntem Notu
+
+- Demo storefront artık varsayılan olarak confirmation sayfasında `GET /pixel` endpoint'ini tetikler.
+- `checkout.html?tracking=pixel|s2s_get|s2s_post` ile test sırasında yöntem override edilebilir.
 
 ---
 
